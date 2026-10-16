@@ -1,0 +1,120 @@
+<!-- ============================================================
+     LANDING PAGE FAVENI ABA — CONTEÚDO PARA WORDPRESS (PARTE 1)
+     ------------------------------------------------------------
+     COMO USAR:
+     1. No servidor (File Manager), renomeie a pasta desta LP
+        de "pos-aba" para "assets-pos" (os arquivos styles.css,
+        script.js e imagens continuam servidos de lá).
+     2. No WordPress: Páginas → Adicionar nova → slug exato
+        "pos-aba" (URL final: favenimatriculas.com.br/pos-aba/).
+     3. Insira um bloco "HTML personalizado" e cole este conteúdo.
+     4. O [elementor-template id="2466"] (popup) SÓ funciona dentro do
+        WordPress — se aparecer como texto, me avise.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://favenimatriculas.com.br/assets-pos/styles.css">
+<style>
+.form-card { width: 100%; display: flex; flex-direction: column; background: #ffffff !important; color: var(--ink) !important; border-radius: 16px !important; padding: 24px 22px !important; border: 1px solid rgba(212, 175, 55, 0.35) !important; box-shadow: 0 20px 45px -15px rgba(12, 40, 23, 0.12), 0 0 0 1px rgba(12, 40, 23, 0.04) !important; scroll-margin-top: 90px; position: relative; overflow: hidden; }
+.form-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold) 0%, #ecd07a 50%, var(--green) 100%); }
+.form-card-head { margin-bottom: 10px; text-align: center; }
+.form-card-head .form-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; background: rgba(212, 175, 55, 0.12); color: #947119; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 100px; margin-bottom: 6px; border: 1px solid rgba(212, 175, 55, 0.28); }
+.form-card-head h2 { font-size: 1.25rem; font-weight: 800; color: var(--forest) !important; margin-bottom: 2px; }
+.form-offer { margin-top: 2px; font-size: .74rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #55665b !important; }
+.form-benefits-list { display: flex; flex-direction: column; gap: 9px; margin: 12px 0 14px; padding: 13px 14px; background: #fbf9f5 !important; border-radius: 10px; border: 1px solid #ede7dc !important; }
+.f-benefit { font-size: 0.84rem; color: #243329 !important; font-weight: 500; display: flex; align-items: center; gap: 9px; line-height: 1.35; }
+.f-benefit span { width: 18px; height: 18px; border-radius: 50%; background: rgba(26, 158, 77, 0.14) !important; color: #127539 !important; font-weight: 900; font-size: 0.74rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.btn-submit.open-popup-trigger { width: 100%; padding: 14px 20px; background: linear-gradient(135deg, #189849 0%, #107234 100%) !important; color: #ffffff !important; font-size: 0.98rem; font-weight: 800; border-radius: 100px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; transition: transform 0.2s, box-shadow 0.2s, filter 0.2s; box-shadow: 0 10px 24px -6px rgba(20, 130, 60, 0.42); letter-spacing: 0.02em; }
+.btn-submit.open-popup-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -6px rgba(20, 130, 60, 0.58); filter: brightness(1.05); color: #ffffff !important; }
+.form-note { font-size: 0.74rem; color: #637067 !important; text-align: center; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+</style>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <button class="topbar-arrow" id="promo-prev" aria-label="Anterior">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <p id="promo-text">Aproveite nossas promoções de outubro — vagas limitadas</p>
+    <button class="topbar-arrow" id="promo-next" aria-label="Próximo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="navbar">
+    <div class="wrap nav-inner">
+        <a href="#" class="logo">
+            <img src="https://favenimatriculas.com.br/assets-pos/GRUPO-FAVENI-1920x714.png" alt="Grupo Educacional Faveni" width="1920" height="714">
+        </a>
+    </div>
+</header>
+
+<!-- HERO: TEXTO | VÍDEO | FORMULÁRIO -->
+<section class="hero">
+    <div class="wrap hero-grid">
+
+        <!-- 1. TEXTO -->
+        <div class="hero-left">
+            <img class="hero-logo" src="https://favenimatriculas.com.br/assets-pos/GRUPO-FAVENI-1920x714.png" alt="Grupo Educacional Faveni" width="1920" height="714">
+            <div class="hero-badges">
+                <span class="hero-pill">Pós-Graduação Online Faveni</span>
+                <span class="offer-badge">Matrículas Abertas</span>
+            </div>
+            <h1>ABA - Análise do Comportamento Aplicada</h1>
+            <p class="hero-sub">Transforme conhecimento em prática e impulsione sua carreira com uma pós-graduação de excelência.</p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>Reconhecido pelo <em>MEC</em></strong>
+                    <span class="stars">★★★★★</span>
+                </div>
+                <div class="stat">
+                    <strong>Conclusão a partir de <em>6 meses</em></strong>
+                    <span class="stat-note">100% online · Sem TCC</span>
+                </div>
+            </div>
+
+            <div class="hero-proof">
+                <div class="avatars">
+                    <span>MA</span><span>JL</span><span>AS</span><span>RC</span>
+                </div>
+                <p>Mais de <b>500 mil</b> alunos formados</p>
+            </div>
+        </div>
+
+        <!-- 2. VÍDEO -->
+        <div class="hero-center">
+            <div class="video-frame" data-youtube="BwfHfqUc8oY">
+                <img src="https://i.ytimg.com/vi/BwfHfqUc8oY/maxresdefault.jpg" alt="Vídeo institucional da pós-graduação em ABA da Faveni" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/BwfHfqUc8oY/hqdefault.jpg'">
+                <button class="play-btn" aria-label="Assistir vídeo">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. FORMULÁRIO / POPUP (Elementor Pro — shortcode 2466) -->
+        <div class="hero-right" id="form">
+            <div class="form-card">
+                <div class="form-card-head">
+                    <span class="form-badge">Condições Especiais</span>
+                    <h2>Garantir minha vaga</h2>
+                    <p class="form-offer">Matrículas Abertas · Reconhecida pelo MEC</p>
+                </div>
+                <div class="form-benefits-list">
+                    <div class="f-benefit"><span>✓</span> 100% online — estude onde e quando quiser</div>
+                    <div class="f-benefit"><span>✓</span> Conclusão rápida a partir de 6 meses</div>
+                    <div class="f-benefit"><span>✓</span> Certificado nota máxima (5) no MEC</div>
+                    <div class="f-benefit"><span>✓</span> Sem TCC</div>
+                </div>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn-submit open-popup-trigger">
+                    Garantir Minha Vaga →
+                </a>
+                <p class="form-note">🔒 Inscrição rápida · Poucas vagas disponíveis</p>
+                <div class="elform">[elementor-template id="2466"]</div>
+            </div>
+        </div>
+
+    </div>
+</section>

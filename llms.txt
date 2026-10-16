@@ -1,0 +1,40 @@
+# Grupo Educacional Faveni — Pós-Graduação em ABA
+
+> Página de matrícula da pós-graduação 100% online em ABA (Análise do Comportamento Aplicada) do Grupo Educacional Faveni, instituição credenciada pelo MEC com nota máxima, +500 mil alunos formados e 350 polos no Brasil.
+
+A Faveni é uma instituição de educação à distância (EAD) brasileira. Esta página comercializa uma pós-graduação lato sensu em ABA e direciona o visitante a um formulário de contato com consultores.
+
+## Dados do curso
+
+- Nome: Pós-Graduação em ABA — Análise do Comportamento Aplicada
+- Modalidade: 100% online (EAD), aulas gravadas disponíveis 24h
+- Conclusão: a partir de 3 meses
+- Titulação: pós-graduação lato sensu (especialização)
+- TCC: opcional
+- Reconhecimento: credenciada pelo MEC, nota máxima (5 estrelas)
+- Pré-requisito: diploma de graduação (bacharelado, licenciatura ou tecnólogo) em qualquer área
+- Carga horária: 810h no total, concluída no ritmo do aluno (conclusão a partir de 3 meses)
+- Grade (16 disciplinas de 60h ou 30h cada): análise do comportamento aplicada no atendimento a indivíduos com desenvolvimento atípico, educação especial e necessidades especiais, fundamentos da psicologia, conceitos fundamentais da análise do comportamento, transtornos do neurodesenvolvimento, os sete princípios da ABA, teoria da personalidade e do comportamento, relações objetoais, TDAH, TEA, abordagem fonoaudiológica no TEA, adequação e adaptação curricular no autismo, metodologia da pesquisa científica, qualidade em serviços de saúde, psicologia da educação e aprendizagem, comportamento cognição e neurociência
+
+## Conteúdo principal
+
+- [Página da pós-graduação em ABA](https://pos.faveni.edu.br/pos-26/): página completa com grade curricular, depoimentos e formulário de matrícula
+- [Institucional Faveni](https://www.faveni.edu.br/): site oficial do Grupo Educacional Faveni
+
+## FAQs
+
+- O curso é reconhecido pelo MEC? Sim, credenciado com nota máxima e validade nacional.
+- Em quanto tempo concluo? A partir de 3 meses, no seu ritmo.
+- O TCC é obrigatório? Não, é opcional.
+- Tudo é online? Sim, aulas e avaliações 100% digitais.
+- Pré-requisito? Diploma de graduação em qualquer área.
+- Quando recebo o certificado? Digital disponível na plataforma após as avaliações; físico sob solicitação.
+
+## Contato
+
+- Formulário de matrícula: https://pos.faveni.edu.br/pos-26/#form
+- Site institucional: https://www.faveni.edu.br/
+
+## Fontes de dados estruturados
+
+- JSON-LD na página: Course, FAQPage, EducationalOrganization e WebPage (schema.org)
