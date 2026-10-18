@@ -358,29 +358,49 @@ document.addEventListener('DOMContentLoaded', () => {
     flushQueue();
 
     /* ========================================================
-       ABRIR O POPUP 2466 DO ELEMENTOR EM TODOS OS BOTÕES
+       ABRIR O POPUP DO ELEMENTOR EM TODOS OS BOTÕES
        ======================================================== */
-    const triggerPopup2466 = (e) => {
+    const triggerPopup = (e) => {
+        const targetEl = e?.currentTarget || e?.target;
+        let popupId = window.FAVENI_POPUP_ID || 2466;
+        let popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==';
+
+        const href = (targetEl && targetEl.getAttribute) ? (targetEl.getAttribute('href') || '') : '';
+        const match = href.match(/settings=([A-Za-z0-9+/=]+)/);
+        if (match) {
+            try {
+                const parsed = JSON.parse(atob(match[1]));
+                if (parsed && parsed.id) {
+                    popupId = Number(parsed.id) || parsed.id;
+                    popupHash = href;
+                }
+            } catch (err) {}
+        } else if (window.FAVENI_POPUP_ID) {
+            popupId = window.FAVENI_POPUP_ID;
+            const b64 = btoa(JSON.stringify({ id: String(popupId), toggle: false }));
+            popupHash = '#elementor-action:action=popup:open&settings=' + b64;
+        }
+
         const label = (e?.target?.textContent || e?.currentTarget?.textContent || '').trim().slice(0, 40);
-        track('cta_click', { label: label || 'popup_2466' });
+        track('cta_click', { label: label || ('popup_' + popupId) });
 
         try {
             if (window.elementorProFrontend && elementorProFrontend.modules && elementorProFrontend.modules.popup) {
                 if (e && e.preventDefault) e.preventDefault();
-                elementorProFrontend.modules.popup.showPopup({ id: 2466 });
+                elementorProFrontend.modules.popup.showPopup({ id: popupId });
                 return;
             }
         } catch (err) {}
 
-        // Fallback nativo de URL dinâmica do Elementor Pro (id 2466 em base64: eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==)
-        const popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==';
+        // Fallback nativo de URL dinâmica do Elementor Pro
         if (window.location.hash !== popupHash) {
             window.location.href = popupHash;
         }
     };
+    const triggerPopup2466 = triggerPopup; // Retrocompatibilidade
 
     document.querySelectorAll('.open-popup-trigger, a[href="#form"], a[href*="popup:open"], .btn, .card-link, .sticky-cta-btn').forEach(el => {
-        el.addEventListener('click', triggerPopup2466);
+        el.addEventListener('click', triggerPopup);
     });
 
     /* ========================================================

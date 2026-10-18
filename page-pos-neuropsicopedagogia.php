@@ -9,7 +9,7 @@
  * 2. Crie ou edite a página no WordPress com o slug "pos-neuropsicopedagogia"
  *    (URL: seudominio.com.br/pos-neuropsicopedagogia/).
  * 3. O WordPress usará este template automaticamente!
- * 4. O shortcode [elementor-template id="2466"] será executado
+ * 4. O shortcode [elementor-template id="115"] será executado
  *    com todos os scripts e AJAX do Elementor Pro carregados.
  */
 ?>
@@ -29,7 +29,7 @@
      VERSÃO 100% PRONTA E AUTOSSUFICIENTE PARA O WORDPRESS
      - CSS totalmente embutido (não depende de arquivo externo)
      - Imagens/logos embutidas em Base64 (sem erro 404)
-     - Integrado ao popup [elementor-template id="2466"]
+     - Integrado ao popup [elementor-template id="115"]
      ------------------------------------------------------------
      COMO USAR:
      1. WordPress: Páginas -> Adicionar nova -> slug desejado (ex: pos-neuropsicopedagogia).
@@ -885,7 +885,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     .wpp { width: 46px; height: 46px; bottom: 16px; right: 16px; }
     body.has-sticky-cta .wpp { bottom: 84px; }
 }
-/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 2466 (CLEAN & GOLD) ---------- */
+/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 115 (CLEAN & GOLD) ---------- */
 .form-benefits-list {
     display: flex;
     flex-direction: column;
@@ -954,7 +954,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     gap: 5px;
 }
 
-/* ---------- FORMULÁRIO DO ELEMENTOR (shortcode 2466) ---------- */
+/* ---------- FORMULÁRIO DO ELEMENTOR (shortcode 115) ---------- */
 .elform { display: block; }
 .elform .elementor-form {
     --e-form-fields-gap: 12px;
@@ -1343,10 +1343,11 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <div class="f-benefit"><span>✓</span> Certificado nota máxima (5) no MEC</div>
                     <div class="f-benefit"><span>✓</span> Sem TCC</div>
                 </div>
-                <button type="button" class="btn-submit open-popup-trigger">
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn-submit open-popup-trigger">
                     Garantir Minha Vaga →
-                </button>
+                </a>
                 <p class="form-note">🔒 Inscrição rápida · Poucas vagas disponíveis</p>
+                <div class="elform"><?php echo do_shortcode('[elementor-template id="115"]'); ?></div>
             </div>
         </div>
 
@@ -1387,7 +1388,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">01</span>
                 <h3>Sem TCC</h3>
                 <p>Conclua sua pós com agilidade. Foque 100% na prática neuropsicopedagógica e acelere a conquista do seu certificado reconhecido pelo MEC sem precisar elaborar monografia.</p>
-                <a href="#form" class="card-link">Fazer matrícula →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Fazer matrícula →</a>
             </article>
 
             <article class="card card-featured reveal">
@@ -1395,14 +1396,14 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">02</span>
                 <h3>Conclusão a partir de 6 meses</h3>
                 <p>Metodologia flexível 100% online: avance no seu ritmo, cumpra as avaliações e emita seu certificado a partir de 6 meses.</p>
-                <a href="#form" class="card-link">Fazer matrícula →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Fazer matrícula →</a>
             </article>
 
             <article class="card reveal">
                 <span class="card-num">03</span>
                 <h3>Nota máxima no MEC</h3>
                 <p>Instituição com excelência acadêmica. Diploma de prestígio, valorizado no mercado e válido em todo o Brasil.</p>
-                <a href="#form" class="card-link">Fazer matrícula →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Fazer matrícula →</a>
             </article>
         </div>
     </div>
@@ -1414,7 +1415,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
         <div class="numbers-big" data-target="500000">0</div>
         <h2>alunos já formados pelo Grupo Faveni</h2>
         <p>E você pode ser o próximo a conquistar sua especialização em Neuropsicopedagogia.</p>
-        <a href="#form" class="btn btn-gold">Falar com um consultor</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-gold open-popup-trigger">Falar com um consultor</a>
     </div>
 </section>
 
@@ -1566,7 +1567,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <h2>Pronto para dar o próximo passo na sua carreira?</h2>
             <p>Fale com um consultor e receba as melhores condições hoje mesmo.</p>
         </div>
-        <a href="#form" class="btn btn-light">Falar com consultor</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-light open-popup-trigger">Falar com consultor</a>
     </div>
 </section>
 
@@ -1661,7 +1662,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <small>Tire suas dúvidas e garanta sua vaga</small>
             </p>
         </div>
-        <a href="#form" class="sticky-cta-btn">Falar com um especialista</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="sticky-cta-btn open-popup-trigger">Falar com um especialista</a>
     </div>
 </div>
 
@@ -2036,22 +2037,22 @@ document.addEventListener('DOMContentLoaded', () => {
        ======================================================== */
 
     /* ========================================================
-       ABRIR O POPUP 2466 DO ELEMENTOR EM TODOS OS BOTÕES
+       ABRIR O POPUP 115 DO ELEMENTOR EM TODOS OS BOTÕES
        ======================================================== */
-    const triggerPopup2466 = (e) => {
+    const triggerPopup115 = (e) => {
         if (e && e.preventDefault) e.preventDefault();
         try {
             if (window.elementorProFrontend && elementorProFrontend.modules && elementorProFrontend.modules.popup) {
-                elementorProFrontend.modules.popup.showPopup({ id: 2466 });
+                elementorProFrontend.modules.popup.showPopup({ id: 115 });
                 return;
             }
         } catch (err) {}
         // Fallback nativo de URL dinâmica do Elementor Pro
-        window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==';
+        window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9';
     };
 
-    document.querySelectorAll('.open-popup-trigger, a[href="#form"], .btn, .card-link').forEach(el => {
-        el.addEventListener('click', triggerPopup2466);
+    document.querySelectorAll('.open-popup-trigger, a[href="#form"], a[href*="popup:open"], .btn, .card-link, .sticky-cta-btn').forEach(el => {
+        el.addEventListener('click', triggerPopup115);
     });
 
     /* ========================================================
