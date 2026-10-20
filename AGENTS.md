@@ -14,16 +14,13 @@ Sempre que o usuário solicitar a criação de uma nova Landing Page de curso ou
    - Paleta de cores oficial (Verde floresta `#0f3521`, Dourado `#c9a13f`, Verde ação `#1a9e4d`, Creme `#fdf6ec`).
    - Tipografia: **Archivo** (headings) e **Inter** (body).
    - Não use Tailwind CSS nem frameworks pesados — o projeto utiliza **Vanilla CSS** moderno e ultraotimizado (`styles.css`).
-3. **Mantenha os 4 Formatos de Entrega:**
-   Para qualquer novo curso (ex: `<slug>`), crie ou atualize:
-   - `index-<slug>.html`: Versão HTML5 estática (com SEO e Schema.org).
-   - `wordpress-<slug>.html`: Versão bloco HTML WordPress com assets externos.
-   - `pagina-pronta-<slug>.html`: Versão autossuficiente (CSS e Base64 inline).
-   - `page-pos-<slug>.php`: Template PHP nativo de tema WordPress.
+3. **Formato Padrão para Elementor:**
+   - O arquivo principal e oficial para colar no WordPress/Elementor é:
+     `wordpress-<slug>.html` (bloco HTML leve, responsivo, com assets em CDN e gatilhos de popup).
 4. **Valide a Carga Horária e Grade:**
    - As disciplinas devem ser numeradas com 2 dígitos (`01`, `02`, ...).
    - A soma das horas na barra totalizadora (`.curriculum-total`) deve corresponder estritamente à soma aritmética de todas as matérias.
 5. **Integração Elementor Pro:**
-   - O popup padrão é o ID **2466**.
-   - Os botões de conversão devem ter a classe `.open-popup-trigger` e o link `#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==`.
-   - Manter o shortcode fallback: `<div class="elform">[elementor-template id="2466"]</div>`.
+   - O popup da página ABA é o ID **3573** (Neuropsicopedagogia: **3525**, AEE: **3582**, Segunda Graduação: **3597**, Pós Geral: **3641**, Educação Especial e Inclusiva: **3661**, Alfabetização e Letramento: **3693**).
+   - Os botões de conversão devem ter a classe `.open-popup-trigger` e o link `#elementor-action:action=popup:open&settings=...` (com ID codificado em base64: para 3573 é `eyJpZCI6IjM1NzMiLCJ0b2dnbGUiOmZhbHNlfQ==`, para 3582 é `eyJpZCI6IjM1ODIiLCJ0b2dnbGUiOmZhbHNlfQ==`, para 3597 é `eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==`, para 3641 é `eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==`, para 3661 é `eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==`, para 3693 é `eyJpZCI6IjM2OTMiLCJ0b2dnbGUiOmZhbHNlfQ==`).
+   - Manter o shortcode fallback: `<div class="elform">[elementor-template id="<id-do-curso>"]</div>`.

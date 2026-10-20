@@ -4,7 +4,7 @@
      VERSÃO 100% PRONTA E AUTOSSUFICIENTE PARA O WORDPRESS
      - CSS totalmente embutido (não depende de arquivo externo)
      - Imagens/logos embutidas em Base64 (sem erro 404 de imagem)
-     - Scripts, carrossel e popup [elementor-template id="115"] embutidos
+     - Scripts, carrossel e popup [elementor-template id="3641"] embutidos
      
      COMO USAR:
      1. No WordPress: Páginas → Adicionar nova → slug desejado (ex: pos-graduacao).
@@ -559,7 +559,7 @@ button { cursor: pointer; border: none; background: none; }
 .mod p { font-size: .87rem; color: var(--text-soft); line-height: 1.6; }
 
 /* ---------- DEPOIMENTOS EM VÍDEO ---------- */
-.vquote {
+.vquote { opacity: 1 !important; transform: none !important; display: flex !important;
     background: var(--paper);
     border: 1.5px solid var(--line);
     border-radius: var(--r);
@@ -923,7 +923,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     body.has-sticky-cta .wpp { bottom: 84px; }
 }
 
-/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 115 (CLEAN & GOLD) ---------- */
+/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 3641 (CLEAN & GOLD) ---------- */
 .form-benefits-list {
     display: flex;
     flex-direction: column;
@@ -992,7 +992,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     gap: 5px;
 }
 
-/* ---------- FORMULÁRIO / POPUP DO ELEMENTOR (shortcode 115) ---------- */
+/* ---------- FORMULÁRIO / POPUP DO ELEMENTOR (shortcode 3641) ---------- */
 .elform { display: block; }
 .elform .elementor-form {
     --e-form-fields-gap: 12px;
@@ -1080,8 +1080,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 .elform .elementor-indicator { background: #fff; }
 
 /* ---------- REVEAL ---------- */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.reveal.visible { opacity: 1 !important; transform: none !important; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1200px) {
@@ -1142,7 +1142,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    background: #000;
+    background: linear-gradient(140deg, var(--forest), var(--forest-2));
     z-index: 1;
 }
 .vquote-media.playing { cursor: default; }
@@ -1432,7 +1432,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             </div>
         </div>
 
-        <!-- 3. FORMULÁRIO / POPUP (Elementor Pro — shortcode 115) -->
+        <!-- 3. FORMULÁRIO / POPUP (Elementor Pro — shortcode 3641) -->
         <div class="hero-right" id="form">
             <div class="form-card">
                 <div class="form-card-head">
@@ -1446,11 +1446,11 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <div class="f-benefit"><span>✓</span> Certificado nota máxima (5) no MEC</div>
                     <div class="f-benefit"><span>✓</span> Sem TCC obrigatório</div>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn-submit open-popup-trigger">
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn-submit open-popup-trigger">
                     Consultar Cursos e Vagas →
                 </a>
                 <p class="form-note">🔒 Atendimento rápido · Consulte bolsas disponíveis</p>
-                <div class="elform">[elementor-template id="115"]</div>
+                <div class="elform">[elementor-template id="3641"]</div>
             </div>
         </div>
 
@@ -1493,7 +1493,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">01</span>
                 <h3>Sem TCC</h3>
                 <p>Conclua sua pós com agilidade. Foque 100% no aprendizado prático e receba seu certificado com respaldo do MEC sem precisar produzir trabalho de conclusão.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Escolher curso →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Escolher curso →</a>
             </article>
 
             <article class="card card-featured reveal">
@@ -1501,14 +1501,14 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">02</span>
                 <h3>Conclusão a partir de 6 meses</h3>
                 <p>Metodologia flexível 100% digital: avance nos módulos no seu ritmo, realize as avaliações online e emita seu certificado a partir de 6 meses.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Falar com consultor →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Falar com consultor →</a>
             </article>
 
             <article class="card reveal">
                 <span class="card-num">03</span>
                 <h3>Nota máxima no MEC</h3>
                 <p>Instituição credenciada com conceito máximo (5 estrelas). Certificados aceitos para concursos públicos, progressão funcional e mercado de trabalho em todo o Brasil.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Garantir bolsa →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Garantir bolsa →</a>
             </article>
         </div>
     </div>
@@ -1543,7 +1543,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                         <li>Alfabetização e Letramento</li>
                     </ul>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="area-btn open-popup-trigger">Ver cursos de Educação →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="area-btn open-popup-trigger">Ver cursos de Educação →</a>
             </div>
 
             <!-- 2. Saúde -->
@@ -1563,7 +1563,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                         <li>Farmácia Clínica e Hospitalar</li>
                     </ul>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="area-btn open-popup-trigger">Ver cursos de Saúde →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="area-btn open-popup-trigger">Ver cursos de Saúde →</a>
             </div>
 
             <!-- 3. Gestão e Negócios -->
@@ -1583,7 +1583,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                         <li>MBA em Logística e Supply Chain</li>
                     </ul>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="area-btn open-popup-trigger">Ver MBAs e Gestão →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="area-btn open-popup-trigger">Ver MBAs e Gestão →</a>
             </div>
 
             <!-- 4. Direito -->
@@ -1603,7 +1603,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                         <li>Direito Administrativo e Gestão Pública</li>
                     </ul>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="area-btn open-popup-trigger">Ver cursos de Direito →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="area-btn open-popup-trigger">Ver cursos de Direito →</a>
             </div>
 
             <!-- 5. Psicologia e Comportamento -->
@@ -1623,7 +1623,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                         <li>Psicopatologia e Saúde Mental</li>
                     </ul>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="area-btn open-popup-trigger">Ver cursos de Psicologia →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="area-btn open-popup-trigger">Ver cursos de Psicologia →</a>
             </div>
 
             <!-- 6. Tecnologia & Engenharia -->
@@ -1643,7 +1643,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                         <li>Perícia e Auditoria Ambiental</li>
                     </ul>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="area-btn open-popup-trigger">Ver cursos de TI e Eng. →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="area-btn open-popup-trigger">Ver cursos de TI e Eng. →</a>
             </div>
 
         </div>
@@ -1654,7 +1654,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <h4>Não encontrou o seu curso exato na lista?</h4>
                 <p>Temos mais de 1.000 especializações e MBAs disponíveis. Fale com um consultor educacional e consulte a grade completa do curso que você deseja.</p>
             </div>
-            <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-gold open-popup-trigger">
+            <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-gold open-popup-trigger">
                 Consultar Todos os Cursos
             </a>
         </div>
@@ -1682,11 +1682,12 @@ body.has-sticky-cta .wpp { bottom: 100px; }
         <div class="numbers-big" data-target="500000">0</div>
         <h2>alunos já formados pelo Grupo Faveni</h2>
         <p>A maior e mais confiável rede de pós-graduação EAD para impulsionar a sua trajetória profissional.</p>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-gold open-popup-trigger">Falar com um consultor</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-gold open-popup-trigger">Falar com um consultor</a>
     </div>
 </section>
 
 <!-- SEÇÃO 04: DEPOIMENTOS DE ALUNOS -->
+<!-- SEÇÃO 04: DEPOIMENTOS DE ALUNOS (OFICIAIS FAVENI) -->
 <section class="section" id="depoimentos">
     <div class="wrap">
         <div class="sec-head">
@@ -1697,73 +1698,73 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 
         <div class="carousel depo-carousel" data-carousel>
             <div class="carousel-track">
-            <article class="vquote reveal">
-                <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.56.mp4">
-                    <span class="vquote-fallback">MC</span>
-                    <button class="vquote-play" aria-label="Assistir depoimento">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <span class="vquote-tag">▶ Depoimento em vídeo</span>
-                </div>
-                <div class="vquote-body">
-                    <div class="stars">★★★★★</div>
-                    <p>Eu super indico! Conteúdo excelente e atendimento maravilhoso. Concluí minha pós no tempo que precisava.</p>
-                    <div class="quote-author">
-                        <div><b>Maria da Conceição</b><small>Aluna de Pós-Graduação Faveni</small></div>
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.56.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.56.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                </div>
-            </article>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Eu super indico! Conteúdo excelente e atendimento maravilhoso. Concluí minha pós no tempo que precisava.</p>
+                        <div class="quote-author">
+                            <div><b>Maria da Conceição</b><small>Aluna de Pós-Graduação Faveni</small></div>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="vquote reveal">
-                <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-1.mp4">
-                    <span class="vquote-fallback">JL</span>
-                    <button class="vquote-play" aria-label="Assistir depoimento">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <span class="vquote-tag">▶ Depoimento em vídeo</span>
-                </div>
-                <div class="vquote-body">
-                    <div class="stars">★★★★★</div>
-                    <p>Amei! Certificado tudo certinho da minha pós. Super recomendo para quem quer agilidade e qualidade.</p>
-                    <div class="quote-author">
-                        <div><b>Janília Lima</b><small>Aluna de Pós-Graduação Faveni</small></div>
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-1.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-1.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                </div>
-            </article>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Amei! Certificado tudo certinho da minha pós. Super recomendo para quem quer agilidade e qualidade.</p>
+                        <div class="quote-author">
+                            <div><b>Janília Lima</b><small>Aluna de Pós-Graduação Faveni</small></div>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="vquote reveal">
-                <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-2.mp4">
-                    <span class="vquote-fallback">AS</span>
-                    <button class="vquote-play" aria-label="Assistir depoimento">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <span class="vquote-tag">▶ Depoimento em vídeo</span>
-                </div>
-                <div class="vquote-body">
-                    <div class="stars">★★★★★</div>
-                    <p>Recomendo, muito bom! Concluí em tempo recorde e o conteúdo é realmente aplicado na prática.</p>
-                    <div class="quote-author">
-                        <div><b>Ana Souza</b><small>Aluna de Pós-Graduação Faveni</small></div>
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-2.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-2.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                </div>
-            </article>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Muito bom! Plataforma fácil e rápida. Já é a minha segunda pós na Faveni e recomendo para todos.</p>
+                        <div class="quote-author">
+                            <div><b>Ana Souza</b><small>Aluna de Pós-Graduação Faveni</small></div>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="vquote reveal">
-                <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.58-1.mp4">
-                    <span class="vquote-fallback">RC</span>
-                    <button class="vquote-play" aria-label="Assistir depoimento">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                    <span class="vquote-tag">▶ Depoimento em vídeo</span>
-                </div>
-                <div class="vquote-body">
-                    <div class="stars">★★★★★</div>
-                    <p>Plataforma fácil, atendimento rápido e certificado emitido sem burocracia. Recomendo para quem trabalha e estuda.</p>
-                    <div class="quote-author">
-                        <div><b>Roberto Carvalho</b><small>Aluno de Pós-Graduação Faveni</small></div>
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.58-1.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.58-1.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                </div>
-            </article>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Facilidade para estudar nos horários livres e certificado válido para pontuar no concurso. Vale muito a pena!</p>
+                        <div class="quote-author">
+                            <div><b>Roberto Carvalho</b><small>Aluno de Pós-Graduação Faveni</small></div>
+                        </div>
+                    </div>
+                </article>
             </div>
 
             <button class="carousel-btn carousel-prev" aria-label="Depoimento anterior">
@@ -1784,7 +1785,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <h2>Pronto para escolher o curso certo para seu futuro?</h2>
             <p>Fale agora com nossos consultores e confira os valores especiais e condições de matrícula.</p>
         </div>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-light open-popup-trigger">Falar com consultor</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-light open-popup-trigger">Falar com consultor</a>
     </div>
 </section>
 
@@ -1858,6 +1859,12 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     </div>
 </footer>
 
+
+<!-- Botão flutuante WhatsApp abrindo formulário popup -->
+<a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="wpp open-popup-trigger" id="wpp-btn" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
 <!-- Barra CTA inferior Sticky -->
 <div class="sticky-cta" id="sticky-cta">
     <div class="wrap sticky-cta-inner">
@@ -1870,7 +1877,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <small>Consulte o catálogo de cursos e garanta sua vaga</small>
             </p>
         </div>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="sticky-cta-btn open-popup-trigger">Falar com especialista</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="sticky-cta-btn open-popup-trigger">Falar com especialista</a>
     </div>
 </div>
 
@@ -2078,28 +2085,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ========================================================
-       Depoimentos em vídeo (MP4 nativo)
-       Pré-carrega o primeiro frame como capa; clique dá play.
+       Depoimentos em vídeo (MP4 nativo Faveni)
        ======================================================== */
     document.querySelectorAll('[data-video]').forEach(media => {
+        let v = media.querySelector('video');
         const src = (media.dataset.video || '').trim();
-        if (!/^https?:\/\/\S+\.mp4(\?\S*)?$/i.test(src)) return;
-        const v = document.createElement('video');
-        v.src = src;
-        v.preload = 'metadata';
-        v.muted = true;
-        v.playsInline = true;
-        v.setAttribute('playsinline', '');
-        v.setAttribute('webkit-playsinline', '');
-        media.prepend(v);
+        if (!v && /^https?:\/\/\S+\.mp4(\?\S*)?$/i.test(src)) {
+            v = document.createElement('video');
+            v.src = src + '#t=0.5';
+            v.preload = 'metadata';
+            v.muted = true;
+            v.playsInline = true;
+            v.setAttribute('playsinline', '');
+            v.setAttribute('webkit-playsinline', '');
+            media.prepend(v);
+        }
+        if (!v) return;
+
+        // Garante que o navegador posicione no frame onde o aluno aparece
+        if (v.currentTime === 0) {
+            v.addEventListener('loadedmetadata', () => {
+                if (v.currentTime === 0) {
+                    try { v.currentTime = 0.5; } catch(err) {}
+                }
+            }, { once: true });
+        }
+
         media.addEventListener('click', () => {
             if (media.classList.contains('playing')) return;
             media.classList.add('playing');
             v.muted = false;
             v.controls = true;
+            if (v.currentTime === 0.5) v.currentTime = 0;
             const p = v.play();
             if (p && p.catch) p.catch(() => {});
-            track('video_play', { tipo: 'depoimento' });
         });
     });
 
@@ -2235,29 +2254,29 @@ document.addEventListener('DOMContentLoaded', () => {
     flushQueue();
 
     /* ========================================================
-       ABRIR O POPUP 115 DO ELEMENTOR EM TODOS OS BOTÕES
+       ABRIR O POPUP 3641 DO ELEMENTOR EM TODOS OS BOTÕES
        ======================================================== */
-    const triggerPopup115 = (e) => {
+    const triggerPopup3641 = (e) => {
         const label = (e?.target?.textContent || e?.currentTarget?.textContent || '').trim().slice(0, 40);
-        track('cta_click', { label: label || 'popup_115' });
+        track('cta_click', { label: label || 'popup_3641' });
 
         try {
             if (window.elementorProFrontend && elementorProFrontend.modules && elementorProFrontend.modules.popup) {
                 if (e && e.preventDefault) e.preventDefault();
-                elementorProFrontend.modules.popup.showPopup({ id: 115 });
+                elementorProFrontend.modules.popup.showPopup({ id: 3641 });
                 return;
             }
         } catch (err) {}
 
-        // Fallback nativo de URL dinâmica do Elementor Pro (id 115 em base64: eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9)
-        const popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9';
+        // Fallback nativo de URL dinâmica do Elementor Pro (id 3641 em base64: eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==)
+        const popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==';
         if (window.location.hash !== popupHash) {
             window.location.href = popupHash;
         }
     };
 
     document.querySelectorAll('.open-popup-trigger, a[href="#form"], a[href*="popup:open"], .btn, .card-link, .sticky-cta-btn').forEach(el => {
-        el.addEventListener('click', triggerPopup115);
+        el.addEventListener('click', triggerPopup3641);
     });
 
     /* ========================================================
@@ -2333,21 +2352,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Trigger oficial do Popup 115
+// Trigger oficial do Popup 3641
 (function() {
-    function triggerPopup115(e) {
+    function triggerPopup3641(e) {
         if (e && e.preventDefault) e.preventDefault();
         try {
             if (window.elementorProFrontend && elementorProFrontend.modules && elementorProFrontend.modules.popup) {
-                elementorProFrontend.modules.popup.showPopup({ id: 115 });
+                elementorProFrontend.modules.popup.showPopup({ id: 3641 });
                 return;
             }
         } catch (err) {}
-        window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9';
+        window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NDEiLCJ0b2dnbGUiOmZhbHNlfQ==';
     }
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.open-popup-trigger, a[href*="popup:open"]').forEach(function(el) {
-            el.addEventListener('click', triggerPopup115);
+            el.addEventListener('click', triggerPopup3641);
         });
     });
 })();

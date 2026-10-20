@@ -7,7 +7,7 @@
      - Conclusão a partir de 12 meses | Sem TCC | Nota Máxima no MEC
      - CSS totalmente embutido (com reset anti-tema no FAQ e botões)
      - Imagens/logos embutidas em Base64 (sem erro 404)
-     - Popup [elementor-template id="115"] integrado em todos os CTAs
+     - Popup [elementor-template id="3597"] integrado em todos os CTAs
      - Barra Sticky inferior restaurada com botão funcional
      
      COMO USAR:
@@ -408,19 +408,44 @@ button { cursor: pointer; border: none; background: none; }
     overflow: hidden;
     border-block: 1px solid rgba(255,255,255,.08);
 }
-.trust-track { overflow: hidden; }
+.trust-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    overflow: hidden !important;
+}
 .trust-items {
-    display: flex; align-items: center; gap: 28px;
-    white-space: nowrap; width: max-content;
-    animation: marquee 32s linear infinite;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 28px !important;
+    padding-right: 28px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    animation: marquee 32s linear infinite !important;
 }
 .trust-items span {
-    font-family: 'Archivo', sans-serif;
-    font-size: .8rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .1em;
+    font-family: 'Archivo', sans-serif !important;
+    font-size: .8rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: .1em !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
 }
-.trust-items i { font-style: normal; font-size: .55rem; color: var(--gold); }
-@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.trust-items i {
+    font-style: normal !important;
+    font-size: .55rem !important;
+    color: var(--gold) !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
 
 /* ---------- SECTIONS ---------- */
 .section { padding: 92px 0; }
@@ -564,7 +589,7 @@ button { cursor: pointer; border: none; background: none; }
 .mod p { font-size: .87rem; color: var(--text-soft); line-height: 1.6; }
 
 /* ---------- DEPOIMENTOS EM VÍDEO ---------- */
-.vquote {
+.vquote { opacity: 1 !important; transform: none !important; display: flex !important;
     background: var(--paper);
     border: 1.5px solid var(--line);
     border-radius: var(--r);
@@ -928,7 +953,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     body.has-sticky-cta .wpp { bottom: 84px; }
 }
 
-/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 115 (CLEAN & GOLD) ---------- */
+/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 3597 (CLEAN & GOLD) ---------- */
 .form-benefits-list {
     display: flex;
     flex-direction: column;
@@ -963,10 +988,10 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 }
 .btn-submit.open-popup-trigger {
     width: 100%;
-    padding: 14px 20px;
+    padding: 13px 18px;
     background: linear-gradient(135deg, #189849 0%, #107234 100%);
     color: #ffffff !important;
-    font-size: 0.98rem;
+    font-size: clamp(0.82rem, 1.8vw, 0.92rem);
     font-weight: 800;
     border-radius: 100px;
     border: none;
@@ -978,7 +1003,9 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     text-decoration: none !important;
     transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
     box-shadow: 0 10px 24px -6px rgba(20, 130, 60, 0.42);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    text-transform: uppercase;
 }
 .btn-submit.open-popup-trigger:hover {
     transform: translateY(-2px);
@@ -997,7 +1024,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     gap: 5px;
 }
 
-/* ---------- FORMULÁRIO / POPUP DO ELEMENTOR (shortcode 115) ---------- */
+/* ---------- FORMULÁRIO / POPUP DO ELEMENTOR (shortcode 3597) ---------- */
 .elform { display: block; }
 .elform .elementor-form {
     --e-form-fields-gap: 12px;
@@ -1085,8 +1112,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 .elform .elementor-indicator { background: #fff; }
 
 /* ---------- REVEAL ---------- */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.reveal.visible { opacity: 1 !important; transform: none !important; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1200px) {
@@ -1337,11 +1364,12 @@ body.has-sticky-cta .wpp { bottom: 100px; }
    ============================================================ */
 .courses-grid-11 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
     margin-top: 36px;
 }
 .course-card {
+    grid-column: span 2;
     background: #ffffff;
     border: 1.5px solid #e3ede6;
     border-radius: 16px;
@@ -1353,6 +1381,16 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     box-shadow: 0 4px 16px rgba(12, 40, 23, 0.04);
     position: relative;
     overflow: hidden;
+}
+.course-card.card-exclusive {
+    grid-column: span 3;
+    border-color: rgba(201, 161, 63, 0.45);
+    background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+    box-shadow: 0 6px 22px rgba(146, 111, 22, 0.07);
+}
+.course-card.card-exclusive:hover {
+    border-color: var(--gold);
+    box-shadow: 0 16px 36px rgba(146, 111, 22, 0.16);
 }
 .course-card:hover {
     transform: translateY(-4px);
@@ -1572,6 +1610,13 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 @media (max-width: 1024px) and (min-width: 681px) {
     .courses-grid-11 {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .course-card {
+        grid-column: span 1;
+    }
+    .course-card.card-exclusive {
+        grid-column: span 1;
+    }
         gap: 20px;
     }
     .steps-grid {
@@ -1581,6 +1626,11 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 @media (max-width: 680px) {
     .courses-grid-11 {
         grid-template-columns: 1fr;
+    }
+    .course-card,
+    .course-card.card-exclusive {
+        grid-column: span 1;
+    }
         gap: 16px;
     }
     .courses-cta-banner {
@@ -1600,7 +1650,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 </style>
 
 <!-- BOTÃO WHATSAPP FLUTUANTE -->
-<a href="#" class="wpp" id="wpp-btn" aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+<a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="wpp open-popup-trigger" id="wpp-btn" aria-label="Abrir formulário via WhatsApp">
     <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -1664,12 +1714,12 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             </div>
         </div>
 
-        <!-- 3. FORMULÁRIO / POPUP (Elementor Pro — shortcode 115) -->
+        <!-- 3. FORMULÁRIO / POPUP (Elementor Pro — shortcode 3597) -->
         <div class="hero-right" id="form">
             <div class="form-card">
                 <div class="form-card-head">
                     <span class="form-badge">Condição Especial 2026</span>
-                    <h2>Garanta sua Bolsa na 2ª Graduação</h2>
+                    <h2>Garanta seu Desconto Especial na 2ª Graduação</h2>
                     <p class="form-offer">11 Cursos de Licenciatura · Reconhecida pelo MEC</p>
                 </div>
                 <div class="form-benefits-list">
@@ -1679,11 +1729,11 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <div class="f-benefit"><span>✓</span> Sem TCC obrigatório</div>
                     <div class="f-benefit"><span>✓</span> Mesma validade de um curso presencial</div>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn-submit open-popup-trigger">
-                    QUERO GARANTIR MINHA BOLSA →
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn-submit open-popup-trigger">
+                    GARANTIR MEU DESCONTO →
                 </a>
                 <p class="form-note">🔒 Atendimento imediato por consultor especialista</p>
-                <div class="elform">[elementor-template id="115"]</div>
+                <div class="elform">[elementor-template id="3597"]</div>
             </div>
         </div>
 
@@ -1732,7 +1782,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">01</span>
                 <h3>Sem TCC Obrigatório</h3>
                 <p>Conclua sua licenciatura com agilidade. Foque 100% no aprendizado prático e receba seu diploma com respaldo do MEC sem precisar produzir monografia.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Escolher curso →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Escolher curso →</a>
             </article>
 
             <article class="card card-featured reveal">
@@ -1740,14 +1790,14 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">02</span>
                 <h3>Conclusão a partir de 12 meses</h3>
                 <p>Metodologia flexível com aproveitamento de estudos: avance nas disciplinas específicas no seu ritmo e conquiste seu novo diploma a partir de 12 meses.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Falar com consultor →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Falar com consultor →</a>
             </article>
 
             <article class="card reveal">
                 <span class="card-num">03</span>
                 <h3>Nota máxima no MEC</h3>
                 <p>Instituição credenciada com conceito máximo (5). Diplomas aceitos para concursos públicos de professores, progressão funcional e mercado de trabalho em todo o Brasil.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Garantir bolsa →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Garantir desconto especial →</a>
             </article>
         </div>
     </div>
@@ -1766,30 +1816,6 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 
             <div class="course-card">
                 <div class="course-card-top">
-                    <div class="course-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-                    <span class="course-badge badge-exclusive">Exclusivo para Licenciados</span>
-                </div>
-                <h3 class="course-title">Pedagogia</h3>
-                <div class="course-time">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Conclusão a partir de <strong>12 meses</strong></span>
-                </div>
-                <p class="course-desc">Habilite-se para atuar na Educação Infantil, anos iniciais do Ensino Fundamental, coordenação pedagógica e gestão escolar.</p>
-                <ul class="course-highlights">
-                    <li>Docência na Educação Infantil e Anos Iniciais</li>
-                    <li>Habilitação em Gestão e Coordenação Escolar</li>
-                    <li>Aproveitamento integral da sua 1ª licenciatura</li>
-                </ul>
-                <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Pedagogia">
-                        <span>Garantir Bolsa no Curso</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="course-card">
-                <div class="course-card-top">
                     <div class="course-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/></svg></div>
                     <span class="course-badge">Licenciatura 100% EAD</span>
                 </div>
@@ -1805,8 +1831,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Alta demanda em concursos estaduais e municipais</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Ciências Biológicas">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Ciências Biológicas">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1829,8 +1855,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Formação reflexiva com metodologia dinâmica</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Filosofia">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Filosofia">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1853,8 +1879,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Conteúdo prático com experimentos e tecnologia</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Física">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Física">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1877,8 +1903,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Vagas constantes em concursos para professores</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Geografia">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Geografia">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1901,8 +1927,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Excelente pontuação em provas de títulos</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="História">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="História">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1925,8 +1951,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Foco em didática da matemática e raciocínio lógico</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Matemática">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Matemática">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1949,8 +1975,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Conexão entre teoria científica e cotidiano</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Química">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Química">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1973,8 +1999,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Projetos interdisciplinares e expressão cultural</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Artes Visuais">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Artes Visuais">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
@@ -1997,14 +2023,38 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Vagas abundantes em concursos e escolas privadas</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Letras: Português e Inglês">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Letras: Português e Inglês">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
             </div>
 
-            <div class="course-card">
+            <div class="course-card card-exclusive">
+                <div class="course-card-top">
+                    <div class="course-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                    <span class="course-badge badge-exclusive">Exclusivo para Licenciados</span>
+                </div>
+                <h3 class="course-title">Pedagogia</h3>
+                <div class="course-time">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Conclusão a partir de <strong>12 meses</strong></span>
+                </div>
+                <p class="course-desc">Habilite-se para atuar na Educação Infantil, anos iniciais do Ensino Fundamental, coordenação pedagógica e gestão escolar.</p>
+                <ul class="course-highlights">
+                    <li>Docência na Educação Infantil e Anos Iniciais</li>
+                    <li>Habilitação em Gestão e Coordenação Escolar</li>
+                    <li>Aproveitamento integral da sua 1ª licenciatura</li>
+                </ul>
+                <div class="course-card-footer">
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Pedagogia">
+                        <span>Garantir Desconto no Curso</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="course-card card-exclusive">
                 <div class="course-card-top">
                     <div class="course-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
                     <span class="course-badge badge-exclusive">Exclusivo para Licenciados</span>
@@ -2021,12 +2071,13 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <li>Alta demanda em redes municipais e estaduais</li>
                 </ul>
                 <div class="course-card-footer">
-                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="course-btn open-popup-trigger" data-course="Educação Especial">
-                        <span>Garantir Bolsa no Curso</span>
+                    <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="course-btn open-popup-trigger" data-course="Educação Especial">
+                        <span>Garantir Desconto no Curso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
             </div>
+
         </div>
 
         <!-- Banner de CTA para quem tem dúvidas de qual curso escolher -->
@@ -2035,7 +2086,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <h4>Dúvidas sobre o aproveitamento da sua 1ª graduação?</h4>
                 <p>Envie seu histórico acadêmico para uma análise gratuita e descubra exatamente o tempo e as disciplinas que você pode dispensar.</p>
             </div>
-            <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-gold open-popup-trigger">Falar com Consultor</a>
+            <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-gold open-popup-trigger">Falar com Consultor</a>
         </div>
     </div>
 </section>
@@ -2075,53 +2126,93 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 </section>
 
 <!-- SEÇÃO 04: DEPOIMENTOS DE ALUNOS -->
+<!-- SEÇÃO 04: DEPOIMENTOS EM VÍDEO (OFICIAIS FAVENI) -->
+<!-- SEÇÃO 04: DEPOIMENTOS EM VÍDEO (OFICIAIS FAVENI) -->
 <section class="section section-alt" id="depoimentos">
     <div class="wrap">
         <div class="sec-head">
             <span class="sec-index">04 — Histórias de Sucesso</span>
             <h2>Quem estudou na Faveni, recomenda</h2>
-            <p>Veja os relatos de profissionais que conquistaram seu segundo diploma e transformaram suas carreiras na educação.</p>
+            <p>Veja os relatos em vídeo de profissionais que conquistaram seu 2º diploma e transformaram suas carreiras na educação.</p>
         </div>
 
-        <div class="carousel" data-carousel>
+        <div class="carousel depo-carousel" data-carousel>
             <div class="carousel-track">
-                <div class="video-card">
-                    <div class="video-thumb">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80" alt="Professora formada na Faveni" loading="lazy">
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.56.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.56.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                    <div class="video-info">
-                        <h4>"Concluí minha Segunda Licenciatura em 12 meses"</h4>
-                        <p>Já era formado em História e fiz Pedagogia para assumir concurso na rede municipal. Processo rápido e diploma reconhecido.</p>
-                        <small>Mariana Silveira · Pedagoga</small>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Eu super indico! Conteúdo excelente e atendimento maravilhoso. Concluí no tempo que precisava para assumir minhas aulas.</p>
+                        <div class="quote-author">
+                            <div><b>Maria da Conceição</b><small>Segunda Graduação Faveni</small></div>
+                        </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="video-card">
-                    <div class="video-thumb">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop&q=80" alt="Professor formado na Faveni" loading="lazy">
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-1.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-1.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                    <div class="video-info">
-                        <h4>"Passei no concurso do estado com meu novo diploma"</h4>
-                        <p>Fiz Matemática na Faveni. A plataforma é excelente, sem burocracia e com suporte rápido dos tutores.</p>
-                        <small>Carlos Eduardo · Professor de Matemática</small>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Amei! Diploma registrado e aceito no concurso do estado. Super recomendo para quem busca agilidade e qualidade.</p>
+                        <div class="quote-author">
+                            <div><b>Janília Lima</b><small>Segunda Licenciatura Faveni</small></div>
+                        </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="video-card">
-                    <div class="video-thumb">
-                        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=600&auto=format&fit=crop&q=80" alt="Aluna Faveni" loading="lazy">
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-2.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.57-2.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
                     </div>
-                    <div class="video-info">
-                        <h4>"Flexibilidade total para quem já trabalha"</h4>
-                        <p>Como dou aulas o dia todo, conseguir estudar no meu tempo e sem TCC fez toda a diferença para conquistar meu 2º diploma.</p>
-                        <small>Juliana Castro · Professora de Letras</small>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Recomendo, muito bom! Concluí em 12 meses aproveitando meus estudos anteriores sem burocracia nem TCC.</p>
+                        <div class="quote-author">
+                            <div><b>Ana Souza</b><small>Segunda Graduação Faveni</small></div>
+                        </div>
                     </div>
-                </div>
+                </article>
+
+                <article class="vquote">
+                    <div class="vquote-media" data-video="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.58-1.mp4">
+                        <video src="https://pos.faveni.edu.br/wp-content/uploads/2026/06/WhatsApp-Video-2026-06-11-at-14.55.58-1.mp4#t=0.5" preload="metadata" playsinline muted webkit-playsinline></video>
+                        <button class="vquote-play" aria-label="Assistir depoimento">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <span class="vquote-tag">▶ Depoimento em vídeo</span>
+                    </div>
+                    <div class="vquote-body">
+                        <div class="stars">★★★★★</div>
+                        <p>Facilidade para estudar nos horários livres e diploma reconhecido com nota máxima no MEC. Valeu a pena!</p>
+                        <div class="quote-author">
+                            <div><b>Roberto Carvalho</b><small>Segunda Graduação Faveni</small></div>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="carousel-nav">
-                <button class="carousel-btn carousel-prev" aria-label="Anterior">←</button>
-                <button class="carousel-btn carousel-next" aria-label="Próximo">→</button>
-            </div>
+
+            <button class="carousel-btn carousel-prev" aria-label="Depoimento anterior">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-next" aria-label="Próximo depoimento">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
         </div>
     </div>
 </section>
@@ -2133,7 +2224,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <h2>Pronto para conquistar seu 2º diploma com a Faveni?</h2>
             <p>Fale agora com nossos consultores e garanta as melhores condições de matrícula para sua Segunda Graduação.</p>
         </div>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-gold btn-lg open-popup-trigger">
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-gold btn-lg open-popup-trigger">
             Falar com Consultor
         </a>
     </div>
@@ -2193,7 +2284,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <a href="#">Políticas de Privacidade</a>
             <a href="#">Termos de Uso</a>
             <a href="#">Portal do Aluno</a>
-            <a href="#">Regulamento de Bolsas</a>
+            <a href="#">Condições Especiais</a>
         </div>
         <div class="footer-col">
             <h4>Navegação</h4>
@@ -2228,7 +2319,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <small>Consulte o aproveitamento da sua 1ª graduação e garanta sua vaga</small>
             </p>
         </div>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="sticky-cta-btn open-popup-trigger">Falar com especialista</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==" class="sticky-cta-btn open-popup-trigger">Falar com especialista</a>
     </div>
 </div>
 
@@ -2244,17 +2335,22 @@ const CONFIG = {
 
 document.addEventListener('DOMContentLoaded', () => {
     /* ========================================================
-       Trigger do Popup 115 do Elementor
+       Trigger do Popup 3597 do Elementor
        ======================================================== */
-    const POPUP_HASH = '#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9';
+    const POPUP_HASH = '#elementor-action:action=popup:open&settings=eyJpZCI6IjM1OTciLCJ0b2dnbGUiOmZhbHNlfQ==';
 
-    function triggerPopup115(e) {
+    function triggerPopup3597(e) {
         if (e && e.preventDefault) e.preventDefault();
+
+        const course = e?.currentTarget?.getAttribute('data-course');
+        if (course) {
+            try { sessionStorage.setItem('faveni_selected_course', course); } catch(err) {}
+        }
 
         // 1. Método nativo Elementor Pro Frontend JS
         if (window.elementorProFrontend && window.elementorProFrontend.modules && window.elementorProFrontend.modules.popup) {
             try {
-                window.elementorProFrontend.modules.popup.showPopup({ id: 115 });
+                window.elementorProFrontend.modules.popup.showPopup({ id: 3597 });
                 return;
             } catch (err) {
                 console.warn('Erro ao chamar showPopup:', err);
@@ -2264,16 +2360,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Método jQuery do Elementor
         if (window.jQuery) {
             try {
-                window.jQuery(document).trigger('elementor/popup/show', [{ id: 115 }]);
+                window.jQuery(document).trigger('elementor/popup/show', [{ id: 3597 }]);
             } catch (err) {}
         }
 
-        // 3. Fallback via hash de ação
-        window.location.hash = POPUP_HASH;
+        // 3. Fallback via URL dinâmica do Elementor Pro
+        if (window.location.hash !== POPUP_HASH) {
+            window.location.href = POPUP_HASH;
+        } else {
+            window.location.hash = '';
+            setTimeout(() => { window.location.href = POPUP_HASH; }, 20);
+        }
     }
 
-    document.querySelectorAll('.open-popup-trigger, a[href*="popup:open"], .course-btn, .sticky-cta-btn, .nav-cta').forEach(el => {
-        el.addEventListener('click', triggerPopup115);
+    document.querySelectorAll('.open-popup-trigger, a[href*="popup:open"], .wpp, #wpp-btn, .course-btn, .sticky-cta-btn, .nav-cta').forEach(el => {
+        el.addEventListener('click', triggerPopup3597);
     });
 
     /* ========================================================
@@ -2309,7 +2410,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    /* ========================================================
+            /* ========================================================
+       Depoimentos em vídeo (MP4 nativo Faveni)
+       ======================================================== */
+    document.querySelectorAll('[data-video]').forEach(media => {
+        let v = media.querySelector('video');
+        const src = (media.dataset.video || '').trim();
+        if (!v && /^https?:\/\/\S+\.mp4(\?\S*)?$/i.test(src)) {
+            v = document.createElement('video');
+            v.src = src.includes('#t=') ? src : src + '#t=0.5';
+            v.preload = 'metadata';
+            v.muted = true;
+            v.playsInline = true;
+            v.setAttribute('playsinline', '');
+            v.setAttribute('webkit-playsinline', '');
+            media.prepend(v);
+        }
+        if (!v) return;
+        media.addEventListener('click', () => {
+            if (media.classList.contains('playing')) return;
+            media.classList.add('playing');
+            v.muted = false;
+            v.controls = true;
+            const p = v.play();
+            if (p && p.catch) p.catch(() => {});
+        });
+    });
+
+/* ========================================================
        Carrossel de Depoimentos
        ======================================================== */
     document.querySelectorAll('[data-carousel]').forEach(car => {

@@ -1,12 +1,12 @@
 <!-- ============================================================
-     LANDING PAGE FAVENI NEUROPSICOPEDAGOGIA INSTITUCIONAL E CLÍNICA
+     LANDING PAGE FAVENI — PÓS-GRADUAÇÃO EM EDUCAÇÃO ESPECIAL E INCLUSIVA
      VERSÃO 100% PRONTA E AUTOSSUFICIENTE PARA O WORDPRESS
      - CSS totalmente embutido (não depende de arquivo externo)
      - Imagens/logos embutidas em Base64 (sem erro 404)
-     - Integrado ao popup [elementor-template id="115"]
+     - Integrado ao popup [elementor-template id="3661"]
      ------------------------------------------------------------
      COMO USAR:
-     1. WordPress: Páginas -> Adicionar nova -> slug desejado (ex: pos-neuropsicopedagogia).
+     1. WordPress: Páginas -> Adicionar nova -> slug desejado (ex: pos-educacao-especial-inclusiva).
      2. Bloco HTML personalizado -> cole TODO este arquivo -> Publicar.
      ============================================================ -->
 
@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* CSS COMPLETO EMBUTIDO - NÃO DEPENDE DE ARQUIVOS EXTERNOS */
 /* ============================================
    FAVENI ABA — LP
    ============================================ */
@@ -121,16 +122,7 @@ button { cursor: pointer; border: none; background: none; }
     padding: 44px 0 0;
     max-width: 560px;
 }
-.hero-logo {
-    height: 46px !important;
-    max-height: 46px !important;
-    width: auto !important;
-    max-width: 170px !important;
-    object-fit: contain !important;
-    margin-bottom: 16px !important;
-    align-self: flex-start !important;
-    display: block !important;
-}
+.hero-logo { height: 46px !important; max-height: 46px !important; width: auto !important; max-width: 170px !important; object-fit: contain !important; margin-bottom: 16px !important; align-self: flex-start !important; display: block !important; }
 .hero-pill {
     display: inline-block;
     align-self: flex-start;
@@ -250,7 +242,7 @@ button { cursor: pointer; border: none; background: none; }
     right: 0;
     background: linear-gradient(270deg, var(--cream) 0%, rgba(253,246,236,.75) 40%, transparent 100%);
 }
-.play-btn {
+.video-frame .play-btn {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
@@ -261,8 +253,8 @@ button { cursor: pointer; border: none; background: none; }
     box-shadow: 0 14px 36px rgba(0,0,0,.4);
     transition: transform .25s, background .25s;
 }
-.play-btn:hover { transform: translate(-50%, -50%) scale(1.06); background: #d6b04d; }
-.play-btn::after {
+.video-frame .play-btn:hover { transform: translate(-50%, -50%) scale(1.06); background: #d6b04d; }
+.video-frame .play-btn::after {
     content: '';
     position: absolute; inset: -6px;
     border: 2px solid rgba(201,161,63,.6);
@@ -680,85 +672,154 @@ button { cursor: pointer; border: none; background: none; }
 .cta-inner h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 800; margin-bottom: 6px; max-width: 560px; }
 .cta-inner p { color: rgba(253,246,236,.65); }
 
-/* ---------- FAQ ---------- */
-.faq-list { border-top: 1.5px solid var(--forest); }
-.faq-item { border-bottom: 1px solid var(--line); }
+/* ---------- FAQ (REDESIGNED PREMIUM ACCORDION) ---------- */
+.faq-list {
+    border-top: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: #ffffff !important;
+    border: 1.5px solid #e3ede6 !important;
+    border-radius: 14px !important;
+    transition: all .25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(12, 40, 23, 0.03) !important;
+}
+.faq-item:hover {
+    border-color: #bcd9c6 !important;
+    box-shadow: 0 8px 22px rgba(12, 40, 23, 0.07) !important;
+    transform: translateY(-2px);
+}
+.faq-item.active {
+    background: #ffffff !important;
+    border-color: var(--green) !important;
+    box-shadow: 0 10px 28px rgba(12, 138, 68, 0.1), 0 2px 6px rgba(12, 40, 23, 0.03) !important;
+}
+
+/* Explicit reset for WordPress / Elementor theme button overrides */
+.faq-q,
+button.faq-q,
+.faq-item .faq-q,
+.faq-item button.faq-q,
+.faq-q:hover,
+.faq-q:focus,
+.faq-q:focus-visible,
+.faq-q:active,
+.faq-item.active .faq-q,
+.faq-item.active button.faq-q,
+.faq-item.active .faq-q:focus,
+.faq-item.active .faq-q:active,
+.faq-item.active .faq-q:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
 .faq-q {
     width: 100% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     gap: 20px !important;
-    padding: 22px 6px !important;
+    padding: 22px 26px !important;
     text-align: left !important;
     font-size: 1.05rem !important;
     font-weight: 700 !important;
-    font-family: inherit !important;
-    color: var(--ink) !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    outline: none !important;
+    font-family: 'Archivo', var(--font-display, sans-serif) !important;
+    color: var(--forest) !important;
     cursor: pointer !important;
     transition: color .2s ease !important;
+    line-height: 1.45 !important;
+}
+.faq-q span {
+    color: inherit !important;
 }
 .faq-q:hover,
-.faq-q:focus,
-.faq-q:focus-visible,
-.faq-q:active {
-    background: transparent !important;
-    background-color: transparent !important;
+.faq-q:hover span {
     color: var(--green) !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
 }
-.faq-item.active .faq-q {
+.faq-item.active .faq-q,
+.faq-item.active .faq-q span {
     color: var(--forest) !important;
-    background: transparent !important;
-    background-color: transparent !important;
 }
+
 .faq-q i {
-    font-style: normal;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--text-mute);
-    transition: transform .3s, color .3s, background .3s, border-color .3s;
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--line);
-    border-radius: var(--r);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    background: transparent;
+    font-style: normal !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    color: var(--forest) !important;
+    background: #edf6f0 !important;
+    border: 1.5px solid #d2e7d8 !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    width: 38px !important;
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1), background .25s ease, color .25s ease, border-color .25s ease !important;
+}
+.faq-q:hover i {
+    background: #dff0e4 !important;
+    border-color: var(--green) !important;
+    color: var(--green) !important;
 }
 .faq-item.active .faq-q i {
     transform: rotate(45deg) !important;
-    color: #fff !important;
-    background: var(--green) !important;
-    border-color: var(--green) !important;
+    background: var(--forest) !important;
+    color: #ffffff !important;
+    border-color: var(--forest) !important;
+    box-shadow: 0 4px 12px rgba(12, 40, 23, 0.22) !important;
 }
+
 .faq-a {
     max-height: 0;
     overflow: hidden;
-    transition: max-height .35s ease, opacity .35s ease;
-    opacity: 0;
+    transition: max-height .35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .faq-item.active .faq-a {
-    max-height: 500px !important;
-    opacity: 1 !important;
+    max-height: 340px;
 }
 .faq-a p {
-    padding: 4px 48px 24px 6px !important;
-    font-size: .95rem !important;
-    color: var(--text-soft) !important;
-    line-height: 1.7 !important;
     margin: 0 !important;
+    padding: 0 26px 24px 26px !important;
+    font-size: 0.96rem !important;
+    color: #3f5045 !important;
+    line-height: 1.75 !important;
+}
+.faq-item.active .faq-a p {
+    border-top: 1px solid #edf4ef !important;
+    padding-top: 18px !important;
+}
+
+@media (max-width: 640px) {
+    .faq-list { gap: 10px; }
+    .faq-q {
+        padding: 18px 20px !important;
+        font-size: 0.96rem !important;
+        gap: 14px !important;
+    }
+    .faq-q i {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        font-size: 1.15rem !important;
+    }
+    .faq-a p {
+        padding: 0 20px 20px 20px !important;
+        font-size: 0.91rem !important;
+    }
 }
 
 /* ---------- FOOTER ---------- */
@@ -859,7 +920,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     .wpp { width: 46px; height: 46px; bottom: 16px; right: 16px; }
     body.has-sticky-cta .wpp { bottom: 84px; }
 }
-/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 115 (CLEAN & GOLD) ---------- */
+
+/* ---------- BENEFÍCIOS DO CARD + BOTÃO POPUP 3573 (CLEAN & GOLD) ---------- */
 .form-benefits-list {
     display: flex;
     flex-direction: column;
@@ -928,7 +990,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     gap: 5px;
 }
 
-/* ---------- FORMULÁRIO DO ELEMENTOR (shortcode 115) ---------- */
+/* ---------- FORMULÁRIO / POPUP DO ELEMENTOR (shortcode 3573) ---------- */
 .elform { display: block; }
 .elform .elementor-form {
     --e-form-fields-gap: 12px;
@@ -988,6 +1050,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 }
 .elform .elementor-button:hover {
     background: var(--green-dark) !important;
+    color: #fff !important;
     transform: translateY(-2px);
     box-shadow: 0 14px 28px -12px rgba(26,158,77,.9);
 }
@@ -1053,11 +1116,11 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 @media (max-width: 480px) {
     .wrap { padding: 0 18px; }
     .form-card { border-radius: 12px; padding: 24px 20px; }
-    .hero-logo { height: 40px !important; max-height: 40px !important; max-width: 150px !important; }
+    .hero-logo { height: 44px; }
     .numbers-big { font-size: 3rem; }
     .mod { padding: 20px; }
     .course-facts { grid-template-columns: 1fr; }
-    .play-btn { width: 76px; height: 54px; }
+    .video-frame .play-btn { width: 76px; height: 54px; }
 }
 
 /* ---------- CRO: stat secundário ---------- */
@@ -1239,6 +1302,20 @@ body.has-sticky-cta .wpp { bottom: 100px; }
 
 
 </style>
+<style>
+.form-card { width: 100%; display: flex; flex-direction: column; background: #ffffff !important; color: var(--ink) !important; border-radius: 16px !important; padding: 24px 22px !important; border: 1px solid rgba(212, 175, 55, 0.35) !important; box-shadow: 0 20px 45px -15px rgba(12, 40, 23, 0.12), 0 0 0 1px rgba(12, 40, 23, 0.04) !important; scroll-margin-top: 90px; position: relative; overflow: hidden; }
+.form-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold) 0%, #ecd07a 50%, var(--green) 100%); }
+.form-card-head { margin-bottom: 10px; text-align: center; }
+.form-card-head .form-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; background: rgba(212, 175, 55, 0.12); color: #947119; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 100px; margin-bottom: 6px; border: 1px solid rgba(212, 175, 55, 0.28); }
+.form-card-head h2 { font-size: 1.25rem; font-weight: 800; color: var(--forest) !important; margin-bottom: 2px; }
+.form-offer { margin-top: 2px; font-size: .74rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #55665b !important; }
+.form-benefits-list { display: flex; flex-direction: column; gap: 9px; margin: 12px 0 14px; padding: 13px 14px; background: #fbf9f5 !important; border-radius: 10px; border: 1px solid #ede7dc !important; }
+.f-benefit { font-size: 0.84rem; color: #243329 !important; font-weight: 500; display: flex; align-items: center; gap: 9px; line-height: 1.35; }
+.f-benefit span { width: 18px; height: 18px; border-radius: 50%; background: rgba(26, 158, 77, 0.14) !important; color: #127539 !important; font-weight: 900; font-size: 0.74rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.btn-submit.open-popup-trigger { width: 100%; padding: 14px 20px; background: linear-gradient(135deg, #189849 0%, #107234 100%) !important; color: #ffffff !important; font-size: 0.98rem; font-weight: 800; border-radius: 100px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; transition: transform 0.2s, box-shadow 0.2s, filter 0.2s; box-shadow: 0 10px 24px -6px rgba(20, 130, 60, 0.42); letter-spacing: 0.02em; }
+.btn-submit.open-popup-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -6px rgba(20, 130, 60, 0.58); filter: brightness(1.05); color: #ffffff !important; }
+.form-note { font-size: 0.74rem; color: #637067 !important; text-align: center; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+</style>
 
 <!-- TOP BAR -->
 <div class="topbar">
@@ -1271,8 +1348,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="hero-pill">Pós-Graduação Online Faveni</span>
                 <span class="offer-badge">Matrículas Abertas</span>
             </div>
-            <h1>Neuropsicopedagogia Institucional e Clínica</h1>
-            <p class="hero-sub">Domine os fundamentos da neurociência aplicada à aprendizagem e capacite-se para diagnosticar, intervir e transformar trajetórias escolares e clínicas.</p>
+            <h1>Educação Especial e Inclusiva</h1>
+            <p class="hero-sub">Torne-se referência em inclusão escolar, salas de recursos multifuncionais e mediação pedagógica para alunos com deficiências, TEA e altas habilidades, com nota máxima no MEC.</p>
 
             <div class="hero-stats">
                 <div class="stat">
@@ -1296,7 +1373,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
         <!-- 2. VÍDEO -->
         <div class="hero-center">
             <div class="video-frame" data-youtube="BwfHfqUc8oY">
-                <img src="https://i.ytimg.com/vi/BwfHfqUc8oY/maxresdefault.jpg" alt="Vídeo institucional da pós-graduação em Neuropsicopedagogia da Faveni" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/BwfHfqUc8oY/hqdefault.jpg'">
+                <img src="https://i.ytimg.com/vi/BwfHfqUc8oY/maxresdefault.jpg" alt="Vídeo institucional da pós-graduação em Educação Especial e Inclusiva da Faveni" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/BwfHfqUc8oY/hqdefault.jpg'">
                 <button class="play-btn" aria-label="Assistir vídeo">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </button>
@@ -1317,11 +1394,11 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <div class="f-benefit"><span>✓</span> Certificado nota máxima (5) no MEC</div>
                     <div class="f-benefit"><span>✓</span> Sem TCC</div>
                 </div>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn-submit open-popup-trigger">
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn-submit open-popup-trigger">
                     Garantir Minha Vaga →
                 </a>
                 <p class="form-note">🔒 Inscrição rápida · Poucas vagas disponíveis</p>
-                <div class="elform">[elementor-template id="115"]</div>
+                <div class="elform">[elementor-template id="3661"]</div>
             </div>
         </div>
 
@@ -1361,8 +1438,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <article class="card reveal">
                 <span class="card-num">01</span>
                 <h3>Sem TCC</h3>
-                <p>Conclua sua pós com agilidade. Foque 100% na prática neuropsicopedagógica e acelere a conquista do seu certificado reconhecido pelo MEC sem precisar elaborar monografia.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Fazer matrícula →</a>
+                <p>Conclua sua pós com agilidade. Foque 100% na prática da educação especial e inclusiva e acelere a conquista do seu certificado reconhecido pelo MEC sem precisar elaborar monografia.</p>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Fazer matrícula →</a>
             </article>
 
             <article class="card card-featured reveal">
@@ -1370,14 +1447,14 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <span class="card-num">02</span>
                 <h3>Conclusão a partir de 6 meses</h3>
                 <p>Metodologia flexível 100% online: avance no seu ritmo, cumpra as avaliações e emita seu certificado a partir de 6 meses.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Fazer matrícula →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Fazer matrícula →</a>
             </article>
 
             <article class="card reveal">
                 <span class="card-num">03</span>
                 <h3>Nota máxima no MEC</h3>
                 <p>Instituição com excelência acadêmica. Diploma de prestígio, valorizado no mercado e válido em todo o Brasil.</p>
-                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="card-link open-popup-trigger">Fazer matrícula →</a>
+                <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="card-link open-popup-trigger">Fazer matrícula →</a>
             </article>
         </div>
     </div>
@@ -1388,8 +1465,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
     <div class="wrap numbers-inner">
         <div class="numbers-big" data-target="500000">0</div>
         <h2>alunos já formados pelo Grupo Faveni</h2>
-        <p>E você pode ser o próximo a conquistar sua especialização em Neuropsicopedagogia.</p>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-gold open-popup-trigger">Falar com um consultor</a>
+        <p>E você pode ser o próximo a conquistar sua especialização em Educação Especial e Inclusiva.</p>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-gold open-popup-trigger">Falar com um consultor</a>
     </div>
 </section>
 
@@ -1399,15 +1476,16 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <div class="sec-head">
                 <span class="sec-index">02 — Grade curricular</span>
                 <h2>Conteúdo programático do curso</h2>
-                <p>15 disciplinas completas, do fundamento neurocientífico à avaliação e intervenção prática em contextos institucionais e clínicos.</p>
+                <p>12 disciplinas completas, cobrindo da fundamentação da inclusão escolar às deficiências sensoriais, físicas, intelectuais, TEA, SRM, Libras e Tecnologia Assistiva.</p>
             </div>
 
             <dl class="course-facts">
-                <div><dt>Curso</dt><dd>Pós-graduação em Neuropsicopedagogia Institucional e Clínica</dd></div>
+                <div><dt>Curso</dt><dd>Pós-graduação em Educação Especial e Inclusiva</dd></div>
                 <div><dt>Modalidade</dt><dd>100% online (EAD), aulas gravadas 24h</dd></div>
+                <div><dt>Carga horária</dt><dd>1.000 horas</dd></div>
                 <div><dt>Conclusão</dt><dd>A partir de 6 meses</dd></div>
                 <div><dt>Titulação</dt><dd>Pós-graduação lato sensu (especialização)</dd></div>
-                <div><dt>TCC</dt><dd>Sem TCC</dd></div>
+                <div><dt>TCC</dt><dd>Sem TCC obrigatório</dd></div>
                 <div><dt>Reconhecimento</dt><dd>Credenciado pelo MEC — nota máxima (5 estrelas)</dd></div>
                 <div><dt>Pré-requisito</dt><dd>Diploma de graduação em qualquer área</dd></div>
                 <div><dt>Polos</dt><dd>350 polos presenciais no Brasil</dd></div>
@@ -1419,25 +1497,22 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                     <span>Carga horária</span>
                 </div>
                 <ol class="curriculum-list">
-                    <li class="reveal"><span class="cur-n">01</span><span class="cur-name">Neurociência: Evolução e Atualidade</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">02</span><span class="cur-name">Neurofisiologia</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">03</span><span class="cur-name">Neuropsicopedagogia: Fundamentos e Práticas dos Contextos de Atuação</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">04</span><span class="cur-name">Fundamentos da Neuropsicopedagogia Institucional</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">05</span><span class="cur-name">Fundamentos da Neuropsicopedagogia Clínica</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">06</span><span class="cur-name">Comunicação Aumentativa e Alternativa (CAA)</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">07</span><span class="cur-name">Transtornos do Neurodesenvolvimento</span><span class="cur-h">50h</span></li>
+                    <li class="reveal"><span class="cur-n">01</span><span class="cur-name">Comunicação Aumentativa e Alternativa (CAA)</span><span class="cur-h">40h</span></li>
+                    <li class="reveal"><span class="cur-n">02</span><span class="cur-name">Deficiência Auditiva e Surdez</span><span class="cur-h">120h</span></li>
+                    <li class="reveal"><span class="cur-n">03</span><span class="cur-name">Deficiência Física e Mobilidade Reduzida</span><span class="cur-h">120h</span></li>
+                    <li class="reveal"><span class="cur-n">04</span><span class="cur-name">Deficiência Intelectual, Altas Habilidades e Superdotação</span><span class="cur-h">120h</span></li>
+                    <li class="reveal"><span class="cur-n">05</span><span class="cur-name">Deficiência Visual – Baixa Visão e Cegueira</span><span class="cur-h">120h</span></li>
+                    <li class="reveal"><span class="cur-n">06</span><span class="cur-name">Deficiências Múltiplas e Surdocegueira</span><span class="cur-h">120h</span></li>
+                    <li class="reveal"><span class="cur-n">07</span><span class="cur-name">Fundamentos e Contextos da Educação Especial e da Inclusão Escolar</span><span class="cur-h">40h</span></li>
                     <li class="reveal"><span class="cur-n">08</span><span class="cur-name">Libras – Língua Brasileira de Sinais</span><span class="cur-h">40h</span></li>
                     <li class="reveal"><span class="cur-n">09</span><span class="cur-name">Metodologia da Pesquisa Científica</span><span class="cur-h">60h</span></li>
-                    <li class="reveal"><span class="cur-n">10</span><span class="cur-name">O Autismo e suas Características</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">11</span><span class="cur-name">Sala de Recursos Multifuncionais</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">12</span><span class="cur-name">Tecnologia Assistiva</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">13</span><span class="cur-name">Desenvolvimento Psicomotor</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">14</span><span class="cur-name">Avaliação e Intervenção Neuropsicopedagógica</span><span class="cur-h">50h</span></li>
-                    <li class="reveal"><span class="cur-n">15</span><span class="cur-name">Sociograma – Intervenção Neuropsicopedagógica Tratando da Convivência em Contextos Coletivos</span><span class="cur-h">50h</span></li>
+                    <li class="reveal"><span class="cur-n">10</span><span class="cur-name">Sala de Recursos Multifuncionais</span><span class="cur-h">60h</span></li>
+                    <li class="reveal"><span class="cur-n">11</span><span class="cur-name">Tecnologia Assistiva</span><span class="cur-h">40h</span></li>
+                    <li class="reveal"><span class="cur-n">12</span><span class="cur-name">TEA – Transtorno do Espectro Autista</span><span class="cur-h">120h</span></li>
                 </ol>
                 <div class="curriculum-total">
                     <strong>Carga horária total</strong>
-                    <span>750h</span>
+                    <span>1.000h</span>
                 </div>
             </div>
         </div>
@@ -1541,7 +1616,7 @@ body.has-sticky-cta .wpp { bottom: 100px; }
             <h2>Pronto para dar o próximo passo na sua carreira?</h2>
             <p>Fale com um consultor e receba as melhores condições hoje mesmo.</p>
         </div>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="btn btn-light open-popup-trigger">Falar com consultor</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn btn-light open-popup-trigger">Falar com consultor</a>
     </div>
 </section>
 
@@ -1563,8 +1638,8 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <div class="faq-a"><p>A partir de 6 meses, estudando no seu próprio ritmo. A metodologia 100% online permite que você avance conforme a sua disponibilidade.</p></div>
             </div>
                 <div class="faq-item">
-                    <button class="faq-q"><span>Onde o especialista em Neuropsicopedagogia pode atuar?</span><i>+</i></button>
-                    <div class="faq-a"><p>Com dupla habilitação institucional e clínica, você pode atuar tanto em instituições de ensino, escolas, salas de recursos e ONGs, quanto de forma clínica em consultórios privados, clínicas multiprofissionais e centros de diagnóstico e intervenção.</p></div>
+                    <button type="button" class="faq-q"><span>Onde o especialista em Educação Especial e Inclusiva pode atuar?</span><i>+</i></button>
+                    <div class="faq-a"><p>Você poderá atuar em Salas de Recursos Multifuncionais (SRM), no Atendimento Educacional Especializado (AEE), em escolas públicas e privadas da educação básica, centros de apoio inclusivo e reabilitação, consultorias pedagógicas e equipes multiprofissionais.</p></div>
                 </div>
             <div class="faq-item">
                 <button type="button" class="faq-q"><span>É obrigatório fazer o TCC?</span><i>+</i></button>
@@ -1636,11 +1711,12 @@ body.has-sticky-cta .wpp { bottom: 100px; }
                 <small>Tire suas dúvidas e garanta sua vaga</small>
             </p>
         </div>
-        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9" class="sticky-cta-btn open-popup-trigger">Falar com um especialista</a>
+        <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==" class="sticky-cta-btn open-popup-trigger">Falar com um especialista</a>
     </div>
 </div>
 
 <script>
+/* SCRIPT COMPLETO EMBUTIDO - NÃO DEPENDE DE ARQUIVOS EXTERNOS */
 /* ============================================================
    CONFIGURAÇÃO — preencha antes de publicar
    ============================================================ */
@@ -1731,7 +1807,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wppDigits = (CONFIG.WHATSAPP_NUMBER || '').replace(/\D/g, '');
     const hasWpp = /^5\d{11,12}$/.test(wppDigits);
     const wppMsg = extra => encodeURIComponent(
-        'Olá! Vim pelo site da pós-graduação em ABA da Faveni e gostaria de mais informações.' +
+        'Olá! Vim pelo site da pós-graduação em Educação Especial e Inclusiva da Faveni e gostaria de mais informações.' +
         (extra ? ' ' + extra : '')
     );
     const wppUrl = extra => `https://wa.me/${wppDigits}?text=${wppMsg(extra)}`;
@@ -1807,19 +1883,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ========================================================
-       FAQ (Accordion)
+       FAQ
        ======================================================== */
     document.querySelectorAll('.faq-item').forEach(item => {
-        const btn = item.querySelector('.faq-q');
-        if (!btn) return;
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+        item.querySelector('.faq-q').addEventListener('click', () => {
             const wasActive = item.classList.contains('active');
             document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if (!wasActive) {
-                item.classList.add('active');
-            }
+            if (!wasActive) item.classList.add('active');
         });
     });
 
@@ -1857,7 +1927,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const src = (media.dataset.video || '').trim();
         if (!/^https?:\/\/\S+\.mp4(\?\S*)?$/i.test(src)) return;
         const v = document.createElement('video');
-        v.src = src;
+        v.src = src.includes('#t=') ? src : src + '#t=0.5';
         v.preload = 'metadata';
         v.muted = true;
         v.playsInline = true;
@@ -2007,26 +2077,50 @@ document.addEventListener('DOMContentLoaded', () => {
     flushQueue();
 
     /* ========================================================
-       Popup removido — o form agora é o do Elementor (shortcode)
+       ABRIR O POPUP DO ELEMENTOR EM TODOS OS BOTÕES
        ======================================================== */
+    const triggerPopup = (e) => {
+        const targetEl = e?.currentTarget || e?.target;
+        let popupId = window.FAVENI_POPUP_ID || 3661;
+        let popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjM2NjEiLCJ0b2dnbGUiOmZhbHNlfQ==';
 
-    /* ========================================================
-       ABRIR O POPUP 115 DO ELEMENTOR EM TODOS OS BOTÕES
-       ======================================================== */
-    const triggerPopup115 = (e) => {
-        if (e && e.preventDefault) e.preventDefault();
+        const href = (targetEl && targetEl.getAttribute) ? (targetEl.getAttribute('href') || '') : '';
+        const match = href.match(/settings=([A-Za-z0-9+/=]+)/);
+        if (match) {
+            try {
+                const parsed = JSON.parse(atob(match[1]));
+                if (parsed && parsed.id) {
+                    popupId = Number(parsed.id) || parsed.id;
+                    popupHash = href;
+                }
+            } catch (err) {}
+        } else if (window.FAVENI_POPUP_ID) {
+            popupId = window.FAVENI_POPUP_ID;
+            const b64 = btoa(JSON.stringify({ id: String(popupId), toggle: false }));
+            popupHash = '#elementor-action:action=popup:open&settings=' + b64;
+        }
+
+        const label = (e?.target?.textContent || e?.currentTarget?.textContent || '').trim().slice(0, 40);
+        track('cta_click', { label: label || ('popup_' + popupId) });
+
         try {
             if (window.elementorProFrontend && elementorProFrontend.modules && elementorProFrontend.modules.popup) {
-                elementorProFrontend.modules.popup.showPopup({ id: 115 });
+                if (e && e.preventDefault) e.preventDefault();
+                elementorProFrontend.modules.popup.showPopup({ id: popupId });
                 return;
             }
         } catch (err) {}
+
         // Fallback nativo de URL dinâmica do Elementor Pro
-        window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjExNSIsInRvZ2dsZSI6ZmFsc2V9';
+        if (window.location.hash !== popupHash) {
+            window.location.href = popupHash;
+        }
     };
+    const triggerPopup3573 = triggerPopup;
+    const triggerPopup2466 = triggerPopup; // Retrocompatibilidade
 
     document.querySelectorAll('.open-popup-trigger, a[href="#form"], a[href*="popup:open"], .btn, .card-link, .sticky-cta-btn').forEach(el => {
-        el.addEventListener('click', triggerPopup115);
+        el.addEventListener('click', triggerPopup);
     });
 
     /* ========================================================

@@ -34,10 +34,10 @@ Repositório oficial de templates e landing pages de alta conversão do **Grupo 
 
 ## ⚡ Integração com Elementor Pro (Popup)
 
-* Todos os botões com a classe `.open-popup-trigger` acionam o popup de captura de leads (ID **2466**).
+* Todos os botões com a classe `.open-popup-trigger` acionam o popup de captura de leads (ex: ID **3573** para ABA, ou conforme o curso).
 * Há um fallback embutido via shortcode:
   ```html
-  <div class="elform">[elementor-template id="2466"]</div>
+  <div class="elform">[elementor-template id="3573"]</div>
   ```
 
 ---

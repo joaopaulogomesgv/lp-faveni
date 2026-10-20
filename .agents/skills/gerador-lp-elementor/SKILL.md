@@ -30,7 +30,7 @@ Toda landing page segue uma estrutura rigorosa de alta conversão composta pelas
      - Headline de oferta (`Garantir minha vaga` / `Condições Especiais`).
      - Lista de 4 benefícios rápidos com ícone de checkmark.
      - Botão de ação direta abrindo o popup do Elementor Pro via classe `.open-popup-trigger`.
-     - Shortcode nativo `[elementor-template id="2466"]` para renderização interna no WordPress.
+     - Shortcode nativo `[elementor-template id="3573"]` (ou o ID específico do curso) para renderização interna no WordPress.
 4. **Trust Marquee:** Letreiro infinito com diferenciais institucionais (100% online, +500.000 alunos, Nota máxima no MEC, Sem TCC, Conclusão a partir de 6 meses, 350 polos).
 5. **Seção 01 — Vantagens (3 Cards):**
    - Card 01: Sem TCC (foco prático e agilidade sem monografia).
@@ -69,30 +69,30 @@ Para cada novo curso com slug `<slug-do-curso>`, devem ser gerados **4 arquivos 
 ### Como Funciona o Popup
 1. **Link de Ação Nativa do Elementor:**
    ```html
-   <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn-submit open-popup-trigger">
+   <a href="#elementor-action:action=popup:open&settings=eyJpZCI6IjM1NzMiLCJ0b2dnbGUiOmZhbHNlfQ==" class="btn-submit open-popup-trigger">
        Garantir Minha Vaga →
    </a>
    ```
 2. **Shortcode Fallback dentro do Card:**
    ```html
-   <div class="elform">[elementor-template id="2466"]</div>
+   <div class="elform">[elementor-template id="3573"]</div>
    ```
 3. **Script de Disparo Automático (Incluso no JS):**
    ```javascript
    (function() {
-       function triggerPopup2466(e) {
+       function triggerPopup3573(e) {
            if (e && e.preventDefault) e.preventDefault();
            try {
                if (window.elementorProFrontend && elementorProFrontend.modules && elementorProFrontend.modules.popup) {
-                   elementorProFrontend.modules.popup.showPopup({ id: 2466 });
+                   elementorProFrontend.modules.popup.showPopup({ id: 3573 });
                    return;
                }
            } catch (err) {}
-           window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==';
+           window.location.href = '#elementor-action:action=popup:open&settings=eyJpZCI6IjM1NzMiLCJ0b2dnbGUiOmZhbHNlfQ==';
        }
        document.addEventListener('DOMContentLoaded', function() {
            document.querySelectorAll('.open-popup-trigger, a[href*="popup:open"]').forEach(function(el) {
-               el.addEventListener('click', triggerPopup2466);
+               el.addEventListener('click', triggerPopup3573);
            });
        });
    })();

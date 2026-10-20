@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const src = (media.dataset.video || '').trim();
         if (!/^https?:\/\/\S+\.mp4(\?\S*)?$/i.test(src)) return;
         const v = document.createElement('video');
-        v.src = src;
+        v.src = src.includes('#t=') ? src : src + '#t=0.5';
         v.preload = 'metadata';
         v.muted = true;
         v.playsInline = true;
@@ -362,8 +362,8 @@ document.addEventListener('DOMContentLoaded', () => {
        ======================================================== */
     const triggerPopup = (e) => {
         const targetEl = e?.currentTarget || e?.target;
-        let popupId = window.FAVENI_POPUP_ID || 2466;
-        let popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjI0NjYiLCJ0b2dnbGUiOmZhbHNlfQ==';
+        let popupId = window.FAVENI_POPUP_ID || 3573;
+        let popupHash = '#elementor-action:action=popup:open&settings=eyJpZCI6IjM1NzMiLCJ0b2dnbGUiOmZhbHNlfQ==';
 
         const href = (targetEl && targetEl.getAttribute) ? (targetEl.getAttribute('href') || '') : '';
         const match = href.match(/settings=([A-Za-z0-9+/=]+)/);
@@ -397,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = popupHash;
         }
     };
+    const triggerPopup3573 = triggerPopup;
     const triggerPopup2466 = triggerPopup; // Retrocompatibilidade
 
     document.querySelectorAll('.open-popup-trigger, a[href="#form"], a[href*="popup:open"], .btn, .card-link, .sticky-cta-btn').forEach(el => {
